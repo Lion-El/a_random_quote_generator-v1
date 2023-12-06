@@ -66,7 +66,7 @@ const quotes = [
   }
 ];
 
-let timedQuote = setInterval(consol.log(getRandomQuote()), 2000);
+let timedQuote = setInterval(printQuote, 8000);
 
 
 /***
