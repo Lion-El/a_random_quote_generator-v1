@@ -83,8 +83,8 @@ function getRandomQuote() {
 ***/
 function getRandomColor() {
   let randomColor = Math.floor(Math.random() * 256);
-  let backgroundColor = `hsl(${randomColor}, 50% ,50%)`;
-  return backgroundColor;
+  let bgColor = `hsl(${randomColor}, 50% ,50%)`;
+  return bgColor;
 }
 
 /***
@@ -93,6 +93,7 @@ function getRandomColor() {
 function printQuote() {
   let randomQuote = getRandomQuote();
   let randomColor = getRandomColor();
+  console.log(randomColor);
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
