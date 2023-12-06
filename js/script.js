@@ -88,7 +88,7 @@ function printQuote() {
     html += `<span class="year">${randomQuote.year}</span>`;
   }
   html += `</p>`;
-  console.log(html);
+  document.getElementById('quote-box').innerHTML = html; 
 }
 
 
