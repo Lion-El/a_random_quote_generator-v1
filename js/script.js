@@ -93,7 +93,7 @@ function getRandomColor() {
 function printQuote() {
   let randomQuote = getRandomQuote();
   let randomColor = getRandomColor();
-  console.log(randomColor);
+  console.log(randomColor)
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
@@ -107,7 +107,7 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.getElementsByTagName('body').style.backgroundColor = randomColor;
+  document.querySelector('body').style.backgroundColor = randomColor;
 }
 
 
