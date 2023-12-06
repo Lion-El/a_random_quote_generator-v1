@@ -108,7 +108,9 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.getElementsByTagName('body').style.backgroundColor = randomColor; 
+  let color = document.getElementsByTagName('body').style.backgroundColor = randomColor;
+  console.log(randomColor);
+  console.log(color);
 }
 
 
