@@ -66,6 +66,7 @@ const quotes = [
   }
 ];
 
+setInterval(printQuote(), 8000);
 
 
 /***
