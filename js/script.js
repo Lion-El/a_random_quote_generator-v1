@@ -81,11 +81,7 @@ function getRandomQuote() {
 /***
  * `getRandomColor` function
 ***/
-function getRandomColor() {
-  let randomColor = Math.floor(Math.random() * 256);
-  let bgColor = `hsl(${randomColor}, 50% ,50%)`;
-  return bgColor;
-}
+let getRandomColor = () => { Math.floor(Math.random() * 256); }
 
 /***
  * `printQuote` function
@@ -107,7 +103,7 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.querySelector('body').style.backgroundColor = randomColor;
+  document.querySelector('body').style.backgroundColor = `hsl(${getRandomColor}, 50%, 50%)`;
 }
 
 
