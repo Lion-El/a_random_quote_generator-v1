@@ -66,7 +66,7 @@ const quotes = [
   }
 ];
 
-let timedQuote = setInterval(printQuote, 8000);
+let timedQuote = setInterval(printQuote, 1000);
 
 
 /***
@@ -108,7 +108,7 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.getElementsByTagName('body').style.background = randomColor; 
+  document.getElementsByTagName('body').style.backgroundColor = randomColor; 
 }
 
 
