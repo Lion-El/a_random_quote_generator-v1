@@ -3,9 +3,13 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+/**
+ * This Web application is designed to provide inspirational quotes at regular intervals automatically and from the click of a button. 
+ ***/
+
+/*** 
+ * `quotes` array containing well known quotes from insppirational fiqures.
+***/
 
 /*** 
  * `quotes` array 
@@ -86,6 +90,9 @@ function printQuote() {
   }
   if (randomQuote.year) {
     html += `<span class="year">${randomQuote.year}</span>`;
+  }
+  if (randomQuote.subject) {
+    html += `<span class="year">${randomQuote.subject}</span>`;
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html; 
