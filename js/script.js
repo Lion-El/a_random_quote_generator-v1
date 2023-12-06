@@ -66,7 +66,7 @@ const quotes = [
   }
 ];
 
-let timedQuote = setInterval(printQuote, 1000);
+let timedQuote = setInterval(printQuote, 2000);
 
 
 /***
