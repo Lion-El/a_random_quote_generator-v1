@@ -69,17 +69,17 @@ const quotes = [
 ***/
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * quotes.length);
-  let randomQuote = quotes[randomNumber];
-  return randomQuote;
+  let randomQuoteObj = quotes[randomNumber];
+  return randomQuoteObj;
 }
-
-console.log(getRandomQuote());
 
 
 /***
  * `printQuote` function
 ***/
-
+function printQuote() {
+  console.log(getRandomQuote());
+}
 
 
 /***
