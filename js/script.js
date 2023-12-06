@@ -85,7 +85,7 @@ function getRandomColor() {
   let red = Math.floor(Math.random() * 256);
   let blue = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
-  let backgroundColor = rgb(red, blue, green);
+  let backgroundColor = `rgb(${red}, ${blue}, ${green})`;
   return backgroundColor;
 }
 
