@@ -73,7 +73,7 @@ const getRandomQuote = () => {
   return randomQuote;
 }
 
-console.log(getRandomQuote);
+console.log(getRandomQuote());
 
 
 /***
