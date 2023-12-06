@@ -103,7 +103,7 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.querySelector('body').style.backgroundColor = `hsl(${getRandomColor}, 50%, 50%)`;
+  document.querySelector('body').style.backgroundColor = `hsl(${getRandomColor()}, 50%, 50%)`;
 }
 
 
