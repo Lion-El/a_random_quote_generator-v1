@@ -87,6 +87,7 @@ let getRandomColor = () => Math.floor(Math.random() * 256);
  * `printQuote` function
 ***/
 function printQuote() {
+  console.log(timedQuote);
   let randomQuote = getRandomQuote();
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
