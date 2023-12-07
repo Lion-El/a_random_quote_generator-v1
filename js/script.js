@@ -4,15 +4,12 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 /**
- * This Web application is designed to provide inspirational quotes at regular intervals automatically and from the click of a button. 
+ * This Web application is designed to provide inspirational quotes at regular intervals automatically and from the click of a button.
+ * The bckground colour changes every time the quote chamges.
  ***/
 
 /*** 
  * `quotes` array containing well known quotes from insppirational fiqures.
-***/
-
-/*** 
- * `quotes` array 
 ***/
 const quotes = [
   {
@@ -66,11 +63,10 @@ const quotes = [
   }
 ];
 
+// function call at timed interval
 let timedQuote = setInterval(printQuote, 8000);
 
-/***
- * `reset timer` function
-***/
+//reset timer function
 const resetTimedInterval = () => {
   clearInterval(timedQuote);
   printQuote();
@@ -78,24 +74,17 @@ const resetTimedInterval = () => {
 }
 
 
-/***
- * `getRandomQuote` function
-***/
+//getRandomQuote function - returns a random object from the quotes array
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * quotes.length);
   let randomQuoteObj = quotes[randomNumber];
   return randomQuoteObj;
 }
 
-/***
- * `getRandomColor` function
-***/
+//getRandomColor function - returns a random numbeer value
 let getRandomColor = () => Math.floor(Math.random() * 256);
 
-/***
- * `printQuote` function
-***/
-
+//printQuote function - renders and quote from the quotes array to the browser
 let randomQuote;
 let previousQuote;
 let randomColor;
@@ -103,13 +92,13 @@ let previousColor;
 
 function printQuote() {
   randomQuote = getRandomQuote();
+  //recall random quote function while current and previous quote are the same 
   while (randomQuote === previousQuote) {
-    console.log(randomQuote);
     randomQuote = getRandomQuote();
   }
   previousQuote = randomQuote;
-  console.log(previousQuote);
 
+  //conditionally build html elements with object values
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
@@ -122,27 +111,23 @@ function printQuote() {
     html += `<span class="year">${randomQuote.subject}</span>`;
   }
   html += `</p>`;
+  //render html elements to the browser
   document.getElementById('quote-box').innerHTML = html;
 
   randomColor = getRandomColor();
+  //recall random color function while current and previous color are the same
   while (randomColor === previousColor) {
-    console.log(randomColor);
     randomColor = getRandomColor();
   }
   previousColor = randomColor;
+  //render body element background color
   document.querySelector('body').style.backgroundColor = `hsl(${randomColor}, 50%, 50%)`;
 }
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
 
+//invoke printQuote function
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+//invoke resetTimedInterval function
 document.getElementById('load-quote').addEventListener("click", resetTimedInterval, false);
