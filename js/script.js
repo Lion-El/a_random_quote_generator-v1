@@ -95,8 +95,21 @@ let getRandomColor = () => Math.floor(Math.random() * 256);
 /***
  * `printQuote` function
 ***/
+
+let randomQuote;
+let previousQuote;
+let randomColor;
+let previousColor;
+
 function printQuote() {
-  let randomQuote = getRandomQuote();
+  randomQuote = getRandomQuote();
+  while (randomQuote === previousQuote) {
+    console.log(randomQuote);
+    randomQuote = getRandomQuote();
+  }
+  previousQuote = randomQuote;
+  console.log(previousQuote);
+
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
@@ -110,7 +123,14 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
-  document.querySelector('body').style.backgroundColor = `hsl(${getRandomColor()}, 50%, 50%)`;
+
+  randomColor = getRandomColor();
+  while (randomColor === previousColor) {
+    console.log(randomColor);
+    randomColor = getRandomColor();
+  }
+  previousColor = randomColor;
+  document.querySelector('body').style.backgroundColor = `hsl(${randomColor}, 50%, 50%)`;
 }
 
 
