@@ -68,6 +68,15 @@ const quotes = [
 
 let timedQuote = setInterval(printQuote, 8000);
 
+/***
+ * `reset timer` function
+***/
+const resetTimedInterval = () => {
+  clearInterval(timedQuote);
+  printQuote();
+  timedQuote = setInterval(printQuote, 8000);
+}
+
 
 /***
  * `getRandomQuote` function
@@ -87,7 +96,6 @@ let getRandomColor = () => Math.floor(Math.random() * 256);
  * `printQuote` function
 ***/
 function printQuote() {
-  console.log(timedQuote);
   let randomQuote = getRandomQuote();
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
@@ -112,3 +120,9 @@ function printQuote() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+/***
+ * click event listener for the print quote button
+ * DO NOT CHANGE THE CODE BELOW!!
+***/
+document.getElementById('load-quote').addEventListener("click", resetTimedInterval, false);
