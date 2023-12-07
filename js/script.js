@@ -8,9 +8,8 @@ project 1 - A Random Quote Generator
  * The bckground colour changes every time the quote chamges.
  ***/
 
-/*** 
- * `quotes` array containing well known quotes from insppirational fiqures.
-***/
+
+ //quotes array containing well known quotes from insppirational fiqures.
 const quotes = [
   {
     quote: 'I have learned that success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome while trying to succeed.',
