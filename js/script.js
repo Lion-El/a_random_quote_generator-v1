@@ -66,7 +66,7 @@ const quotes = [
   }
 ];
 
-let timedQuote = setInterval(printQuote, 2000);
+let timedQuote = setInterval(printQuote, 8000);
 
 
 /***
@@ -88,8 +88,6 @@ let getRandomColor = () => Math.floor(Math.random() * 256);
 ***/
 function printQuote() {
   let randomQuote = getRandomQuote();
-  let randomColor = getRandomColor();
-  console.log(randomColor);
   let html = `<p class="quote">${randomQuote.quote}</p>
   <p class="source">${randomQuote.source}`;
   if (randomQuote.citation) {
